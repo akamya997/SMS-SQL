@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+{% endblock %}
+{% block pagename %} 成绩录入 {% endblock %}
+{% block title %}成绩录入{% endblock %}
+{% block content %}
+{% if message %}
+<script type="text/javascript">
+    alert('{{message}}');
+    window.location.href = "/Course";
+</script>
+{% endif %}
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h4>课程号：{{current_kh}} 课程名：{{ current_km }} </h4>
+        <form class='form-input' action="#" method="post">
+            {% csrf_token %}
+            {{input_form.as_p}}
+            <button type="submit" class="btn btn-primary pull-left">提交</button>
+        </form>
+    </div>
+{% endblock %}

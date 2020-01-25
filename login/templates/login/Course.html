@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+{% endblock %}
+{% load render_table from django_tables2 %}
+{% block pagename %} 所设课程 {% endblock %}
+{% block title %}所设课程{% endblock %}
+{% block content %}
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        {% render_table table%}
+    </div>
+{% endblock %}
