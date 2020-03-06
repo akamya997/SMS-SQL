@@ -22,6 +22,7 @@ DATABASES = {
         'PASSWORD': 'lzy',      #密码
         'HOST': '127.0.0.1',    #IP
         'PORT': '3306',                   #端口
+        'OPTIONS': {'isolation_level': None},
     }
 }
 
