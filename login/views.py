@@ -196,3 +196,15 @@ def input_score(request, pk):
             message = 'All input has been done'
         return render(request, 'login/input_score.html', locals())
     return redirect('/index/')
+
+
+def open_course(request):
+    if request.session.get('teacher', None):
+        course_form = forms.CourseForm()
+        if request.method == 'POST':
+            course_form = forms.CourseForm(request.POST)
+            if course_form.is_valid():
+                course_form.save()
+                message = '创建成功'
+        return render(request, 'login/open_course.html', locals())
+    return redirect('/index/')

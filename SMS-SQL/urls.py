@@ -31,6 +31,7 @@ urlpatterns = [
     path('ScoreQuery/', views.score_query),
     path('Giveup/', views.give_up),
     path('Course/', views.course_table, name='Course'),
+    path('Open_Course/', views.open_course),
     re_path(r'^Course/InputScore/(\d+)/', views.input_score, name='InputScore'),
     path('Open/', views.open_course),
 ]

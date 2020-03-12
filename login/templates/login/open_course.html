@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+{% endblock %}
+{% block pagename %} 开设课程 {% endblock %}
+{% block title %}开设课程{% endblock %}
+{% block content %}
+{% if message %}
+<script type="text/javascript">
+    alert('{{message}}');
+</script>
+{% endif %}
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <form class='form-input' action="#" method="post">
+            {% csrf_token %}
+            {{course_form}}
+            <br><br>
+            <button type="submit" class="btn btn-primary pull-left">提交</button>
+        </form>
+    </div>
+{% endblock %}

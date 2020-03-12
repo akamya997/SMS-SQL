@@ -11,3 +11,8 @@ class InputForm(forms.ModelForm):
         model = models.Event
         exclude = ('id',)
 
+
+class CourseForm(forms.ModelForm):
+    class Meta:
+        model = models.OpenCourse
+        exclude = ('id',)
